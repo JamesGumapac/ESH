@@ -1,0 +1,286 @@
+<workflow scriptid="customworkflow_kd_wf_cust_req_fields">
+  <description>For AR Analyst&#xd;
+- Set Subsidiary, SalesForce ID,  Name/ID, Terms, Address and Invoice Method as mandatory fields&#xd;
+&#xd;
+For Sales Manager&#xd;
+- Set Subsidiary, SalesForce ID,  Name/ID, Terms, Address, Invoice Method, Status, Type and Customer Terms (Requested) as mandatory fields&#xd;
+&#xd;
+Invoice Method is Portal&#xd;
+- Customer Portal Address as mandatory field&#xd;
+&#xd;
+Invoice Method is Email&#xd;
+- Email as mandatory field</description>
+  <initcontexts>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</initcontexts>
+  <initeventtypes></initeventtypes>
+  <initlocalizationcontext></initlocalizationcontext>
+  <initoncreate>T</initoncreate>
+  <initonvieworupdate>T</initonvieworupdate>
+  <initsavedsearchcondition></initsavedsearchcondition>
+  <inittriggertype></inittriggertype>
+  <isinactive>F</isinactive>
+  <islogenabled>T</islogenabled>
+  <keephistory>ALWAYS</keephistory>
+  <name>Kodella | Customer Required Fields</name>
+  <recordtypes>CUSTOMER</recordtypes>
+  <releasestatus>RELEASED</releasestatus>
+  <runasadmin>T</runasadmin>
+  <initcondition>
+    <formula></formula>
+    <type>VISUAL_BUILDER</type>
+  </initcondition>
+  <workflowstates>
+    <workflowstate scriptid="workflowstate49">
+      <description></description>
+      <donotexitworkflow>F</donotexitworkflow>
+      <name>Initiation</name>
+      <positionx>243</positionx>
+      <positiony>133</positiony>
+      <workflowactions triggertype="ONENTRY">
+        <workflowactiongroup scriptid="workflowaction200">
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <initcondition>
+            <formula><![CDATA["User Role" IN ("Role1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>User Role</name>
+                <value>STDUSERROLE</value>
+              </parameter>
+              <parameter>
+                <name>Role1</name>
+                <selectrecordtype>-118</selectrecordtype>
+                <value>[scriptid=customrole_groupcbs_ar_analyst]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+          <setfieldmandatoryaction scriptid="workflowaction201">
+            <field>STDENTITYSUBSIDIARY</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction202">
+            <field>[type=entitycustomfield, scriptid=cseg_salesforce_id]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction203">
+            <field>STDENTITYENTITYID</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction204">
+            <field>STDENTITYTERMS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction205">
+            <field>STDENTITYDEFAULTADDRESS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction220">
+            <field>[scriptid=custentity_kd_invoice_method]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+        </workflowactiongroup>
+        <workflowactiongroup scriptid="workflowaction206">
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <initcondition>
+            <formula><![CDATA["User Role" IN ("Role1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>User Role</name>
+                <value>STDUSERROLE</value>
+              </parameter>
+              <parameter>
+                <name>Role1</name>
+                <selectrecordtype>-118</selectrecordtype>
+                <value>[scriptid=customrole_groupcbs_sales_manager]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+          <setfieldmandatoryaction scriptid="workflowaction207">
+            <field>STDENTITYSUBSIDIARY</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction208">
+            <field>[type=entitycustomfield, scriptid=cseg_salesforce_id]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction210">
+            <field>STDENTITYENTITYID</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction212">
+            <field>STDENTITYTERMS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction213">
+            <field>STDENTITYSTATUS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction214">
+            <field>STDENTITYTYPE</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction218">
+            <field>[scriptid=custentity_kd_customer_terms]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction219">
+            <field>STDENTITYDEFAULTADDRESS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction221">
+            <field>[scriptid=custentity_kd_invoice_method]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+        </workflowactiongroup>
+      </workflowactions>
+      <workflowactions triggertype="AFTERFIELDEDIT">
+        <setfieldmandatoryaction scriptid="workflowaction348">
+          <clienttriggerfields>[scriptid=custentity_kd_invoice_method]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custentity_kd_customer_port_add]</field>
+          <isinactive>F</isinactive>
+          <ismandatory>T</ismandatory>
+          <issublistfield>F</issublistfield>
+          <initcondition>
+            <formula><![CDATA["Invoice Method" IN ("Invoice Method List1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Invoice Method</name>
+                <value>[scriptid=custentity_kd_invoice_method]</value>
+              </parameter>
+              <parameter>
+                <name>Invoice Method List1</name>
+                <selectrecordtype>[scriptid=customlist_invoice_method_list]</selectrecordtype>
+                <value>[scriptid=customlist_invoice_method_list.val_41354_6731266_sb2_130]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldmandatoryaction>
+        <setfieldmandatoryaction scriptid="workflowaction349">
+          <clienttriggerfields>[scriptid=custentity_kd_invoice_method]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>STDENTITYEMAIL</field>
+          <isinactive>F</isinactive>
+          <ismandatory>T</ismandatory>
+          <issublistfield>F</issublistfield>
+          <initcondition>
+            <formula><![CDATA["Invoice Method" IN ("Invoice Method List1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Invoice Method</name>
+                <value>[scriptid=custentity_kd_invoice_method]</value>
+              </parameter>
+              <parameter>
+                <name>Invoice Method List1</name>
+                <selectrecordtype>[scriptid=customlist_invoice_method_list]</selectrecordtype>
+                <value>[scriptid=customlist_invoice_method_list.val_41355_6731266_sb2_660]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldmandatoryaction>
+        <setfieldmandatoryaction scriptid="workflowaction350">
+          <clienttriggerfields>[scriptid=custentity_kd_invoice_method]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>[scriptid=custentity_kd_customer_port_add]</field>
+          <isinactive>F</isinactive>
+          <ismandatory>F</ismandatory>
+          <issublistfield>F</issublistfield>
+          <initcondition>
+            <formula><![CDATA["Invoice Method" NOT IN ("Invoice Method List1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Invoice Method</name>
+                <value>[scriptid=custentity_kd_invoice_method]</value>
+              </parameter>
+              <parameter>
+                <name>Invoice Method List1</name>
+                <selectrecordtype>[scriptid=customlist_invoice_method_list]</selectrecordtype>
+                <value>[scriptid=customlist_invoice_method_list.val_41354_6731266_sb2_130]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldmandatoryaction>
+        <setfieldmandatoryaction scriptid="workflowaction351">
+          <clienttriggerfields>[scriptid=custentity_kd_invoice_method]</clienttriggerfields>
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <field>STDENTITYEMAIL</field>
+          <isinactive>F</isinactive>
+          <ismandatory>F</ismandatory>
+          <issublistfield>F</issublistfield>
+          <initcondition>
+            <formula><![CDATA["Invoice Method" NOT IN ("Invoice Method List1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>Invoice Method</name>
+                <value>[scriptid=custentity_kd_invoice_method]</value>
+              </parameter>
+              <parameter>
+                <name>Invoice Method List1</name>
+                <selectrecordtype>[scriptid=customlist_invoice_method_list]</selectrecordtype>
+                <value>[scriptid=customlist_invoice_method_list.val_41355_6731266_sb2_660]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+        </setfieldmandatoryaction>
+      </workflowactions>
+    </workflowstate>
+  </workflowstates>
+</workflow>

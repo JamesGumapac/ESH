@@ -1,0 +1,56 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>ESH</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">SFA</feature>
+      <feature required="true">WORKFLOW</feature>
+      <feature required="true">ACCOUNTING</feature>
+      <feature required="true">MULTPRICE</feature>
+      <feature required="true">SALESORDERS</feature>
+      <feature required="true">SUBSIDIARIES</feature>
+      <feature required="false">CREATESUITEBUNDLES</feature>
+    </features>
+    <objects>
+      <object>customworkflow_kd_wf_vendorbill_approval.workflowstate33.workflowaction_site_manager_reject_btn</object>
+      <object>customscript_kd_wfa_check_je_line</object>
+      <object>customscript_kd_wa_check_if_crtdfrm_po</object>
+      <object>customlist_kd_po_req_type</object>
+      <object>customscript_kd_wa_email_approval.custscript_kd_wa_email_approval_type</object>
+      <object>custbody_kd_pending_rej_res_frm</object>
+      <object>custbody_kd_return_type</object>
+      <object>customworkflow_kd_wf_vendorbill_approval.workflowstate33.workflowaction_site_manager_approval_btn</object>
+      <object>custentity_kd_w9_licence</object>
+      <object>custentity_kd_invoice_method</object>
+      <object>customscript_kd_wfa_set_status_to_pr</object>
+      <object>customlist_invoice_method_list</object>
+      <object>customscript_kd_wfa_req_rej_email</object>
+      <object>custentity_kd_custom_terms</object>
+      <object>customscript_kd_wfa_redirect_to_sl</object>
+      <object>customlist_kd_customer_terms_list</object>
+      <object>customscript_kd_wa_email_approval</object>
+      <object>custentity_kdl_vendor_terms</object>
+      <object>custbody_kd_approval_stage</object>
+      <object>customscript_kd_sl_po_req_rej_reason.customdeploy_kd_sl_po_req_rej_reason</object>
+      <object>customrecord_kd_cust_rec_rej_reason.custrecord_kd_po_requisition</object>
+      <object>customscript_kd_wa_tranline_exceeds_amt</object>
+      <object>custbody_kd_rejected_reason</object>
+      <object>custentity_kd_payment_method</object>
+      <object>customrecord_kd_cust_rec_rej_reason</object>
+      <object>custentity_kd_approved_by</object>
+      <object>custentity_kd_customer_terms</object>
+      <object>customrecord_kd_cust_rec_rej_reason.custrecord_kd_rej_res_app_stage</object>
+      <object>custitem_kd_approved_by</object>
+      <object>custentity_kd_customer_port_add</object>
+      <object>customrecord_kd_cust_rec_rej_reason.custrecord_kd_reject_reason</object>
+      <object>custentity_kd_vendor_type</object>
+      <object>customscript_kd_wa_check_if_crtdfrm_po.custscript_kd_wa_check_if_crtdfrm_po</object>
+      <object>custentity_kd_isrecordlocked</object>
+      <object>customscript_kd_wa_email_approval.custscript_kd_wa_cfo_apprvl_required</object>
+      <object>customscript_kd_wa_check_new_lines</object>
+      <object>customscript_kd_wa_tranline_exceeds_amt.custscript_kd_amount</object>
+      <object>customrecord_kd_cust_rec_rej_reason.custrecord_kd_cust_rec_requestor</object>
+      <object>cseg_salesforce_id</object>
+    </objects>
+  </dependencies>
+</manifest>

@@ -1,0 +1,214 @@
+<workflow scriptid="customworkflow_kd_wf_vendor_req_fields">
+  <description>AP Analyst&#xd;
+- Vendor Category&#xd;
+- Subsidiary&#xd;
+- SalesForce ID&#xd;
+- Name/ID&#xd;
+- Terms&#xd;
+- Payment Method&#xd;
+- Status&#xd;
+- Vendor Type&#xd;
+- Address&#xd;
+- W9/License&#xd;
+&#xd;
+Purchasing Manager required fields:&#xd;
+- Vendor Category&#xd;
+- Subsidiary&#xd;
+- SalesForce ID&#xd;
+- Name/ID&#xd;
+- Payment Method&#xd;
+- Status&#xd;
+- Vendor Type&#xd;
+- Address&#xd;
+- W9/License&#xd;
+- Vendor Terms (Requested)</description>
+  <initcontexts>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</initcontexts>
+  <initeventtypes></initeventtypes>
+  <initlocalizationcontext></initlocalizationcontext>
+  <initoncreate>T</initoncreate>
+  <initonvieworupdate>T</initonvieworupdate>
+  <initsavedsearchcondition></initsavedsearchcondition>
+  <inittriggertype></inittriggertype>
+  <isinactive>F</isinactive>
+  <islogenabled>T</islogenabled>
+  <keephistory>ALWAYS</keephistory>
+  <name>Kodella | Vendor Required Fields</name>
+  <recordtypes>VENDOR</recordtypes>
+  <releasestatus>RELEASED</releasestatus>
+  <runasadmin>F</runasadmin>
+  <initcondition>
+    <formula></formula>
+    <type>VISUAL_BUILDER</type>
+  </initcondition>
+  <workflowstates>
+    <workflowstate scriptid="workflowstate46">
+      <description></description>
+      <donotexitworkflow>F</donotexitworkflow>
+      <name>Initiation</name>
+      <positionx>243</positionx>
+      <positiony>133</positiony>
+      <workflowactions triggertype="ONENTRY">
+        <workflowactiongroup scriptid="workflowaction179">
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <initcondition>
+            <formula><![CDATA["User Role" IN ("Role1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>User Role</name>
+                <value>STDUSERROLE</value>
+              </parameter>
+              <parameter>
+                <name>Role1</name>
+                <selectrecordtype>-118</selectrecordtype>
+                <value>[scriptid=customrole_groupcbs_ap_analyst]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+          <setfieldmandatoryaction scriptid="workflowaction180">
+            <field>STDENTITYVENDTYPE</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction181">
+            <field>STDENTITYSUBSIDIARY</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction183">
+            <field>STDENTITYENTITYID</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction184">
+            <field>STDENTITYTERMS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction185">
+            <field>[scriptid=custentity_kd_payment_method]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction186">
+            <field>STDENTITYSTATUS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction187">
+            <field>[scriptid=custentity_kd_vendor_type]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction188">
+            <field>STDENTITYDEFAULTADDRESS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction189">
+            <field>[scriptid=custentity_kd_w9_licence]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+        </workflowactiongroup>
+        <workflowactiongroup scriptid="workflowaction190">
+          <conditionsavedsearch></conditionsavedsearch>
+          <contexttypes>ACTION|BANKCONNECTIVITY|BANKSTATEMENTPARSER|BUNDLEINSTALLATION|CLIENT|CSVIMPORT|CUSTOMGLLINES|CUSTOMMASSUPDATE|RECORDACTION|DATASETBUILDER|DEBUGGER|EMAILCAPTURE|FICONNECTIVITY|FIPARSER|MAPREDUCE|OFFLINECLIENT|OTHER|PAYMENTPOSTBACK|PAYMENTGATEWAY|PLATFORMEXTENSION|PORTLET|PROMOTIONS|CONSOLRATEADJUSTOR|RESTWEBSERVICES|RESTLET|ADVANCEDREVREC|SCHEDULED|SDFINSTALLATION|SHIPPINGPARTNERS|WEBSERVICES|SUITELET|TAXCALCULATION|USEREVENT|USERINTERFACE|WORKBOOKBUILDER|WORKFLOW</contexttypes>
+          <eventtypes></eventtypes>
+          <isinactive>F</isinactive>
+          <scheduledelay></scheduledelay>
+          <schedulemode>DELAY</schedulemode>
+          <schedulerecurrence></schedulerecurrence>
+          <scheduletimeofday></scheduletimeofday>
+          <scheduletimeunit></scheduletimeunit>
+          <initcondition>
+            <formula><![CDATA["User Role" IN ("Role1")]]></formula>
+            <type>VISUAL_BUILDER</type>
+            <parameters>
+              <parameter>
+                <name>User Role</name>
+                <value>STDUSERROLE</value>
+              </parameter>
+              <parameter>
+                <name>Role1</name>
+                <selectrecordtype>-118</selectrecordtype>
+                <value>[scriptid=customrole_groupcbs_purchasing_manager]</value>
+              </parameter>
+            </parameters>
+          </initcondition>
+          <setfieldmandatoryaction scriptid="workflowaction191">
+            <field>STDENTITYVENDTYPE</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction192">
+            <field>STDENTITYSUBSIDIARY</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction193">
+            <field>STDENTITYENTITYID</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction195">
+            <field>[scriptid=custentity_kdl_vendor_terms]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction196">
+            <field>[scriptid=custentity_kd_payment_method]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction197">
+            <field>STDENTITYDEFAULTADDRESS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction198">
+            <field>STDENTITYSTATUS</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction199">
+            <field>[scriptid=custentity_kd_w9_licence]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+          <setfieldmandatoryaction scriptid="workflowaction215">
+            <field>[scriptid=custentity_kd_vendor_type]</field>
+            <isinactive>F</isinactive>
+            <ismandatory>T</ismandatory>
+            <issublistfield>F</issublistfield>
+          </setfieldmandatoryaction>
+        </workflowactiongroup>
+      </workflowactions>
+    </workflowstate>
+  </workflowstates>
+</workflow>
